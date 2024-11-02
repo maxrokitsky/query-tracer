@@ -162,4 +162,5 @@ cython_debug/
 .idea/
 
 
+node_modules
 session.db
