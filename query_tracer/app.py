@@ -1,7 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from query_tracer.api.config import Tags
+from framework.registry import apps
+from framework.startup import startup
+from query_tracer.api.tags import Tags
+
+startup()
 
 app = FastAPI(
     description='Query Tracer API',
@@ -25,3 +29,5 @@ app.add_middleware(
     allow_methods=['*'],
     allow_headers=['*'],
 )
+
+apps.inject_routers(app)
