@@ -24,7 +24,6 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.ruff]
 target-version = "py313"
-line-length = 120
 extend-exclude = [
     ".devcontainer",
     ".vscode",
@@ -111,9 +110,13 @@ ignore = [
     "D300",
     "D203",  # or D211
     "D212",  # or D213
+    "D401",
 
     "ISC001",
     "COM812",
+
+    "ANN101",
+    "ANN102",
 ]
 
 [tool.pyright]
